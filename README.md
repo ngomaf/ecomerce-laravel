@@ -22,10 +22,30 @@ Small ecomerce project, to train end domain the good PHP framework, the Laravel.
 
 ## Features
 - user (firstName, middleEndLastName, slug, email, password...)
-- locale (procince, city)
-    - user_locale (user_id, locale_id)
+- province (name, code)
+- city (name, portal_code, province_id)
+    - user_city (user_id, city_id)
 - category_product (name, slug, description)
 - product (name, slug, price, status, description, image, user_id, category_id)
 - cart
 - sale
 - login
+
+
+## node
+
+import tailwindcss
+In view > head add
+```
+@vite(['resources/css/app.css'])
+```
+
+install depences
+```shell
+npm install
+```
+
+run node
+```shell
+npm run dev
+```

@@ -9,4 +9,6 @@ class Province extends Model
 {
     /** @use HasFactory<\Database\Factories\ProvinceFactory> */
     use HasFactory;
+
+    public bool $timestamps = false;
 }
