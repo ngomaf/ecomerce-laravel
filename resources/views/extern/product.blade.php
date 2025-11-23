@@ -1,4 +1,4 @@
-@extends('extern.layout')
+@extends('layout')
 @section('title', "{$product->name} - Produto")
 @section('content')
         <section class="container struture">

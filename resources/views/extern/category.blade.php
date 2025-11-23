@@ -1,4 +1,4 @@
-@extends('extern.layout')
+@extends('layout')
 @section('title', "{$category->name} - Categoria")
 @section('content')
         <div class="container struture">

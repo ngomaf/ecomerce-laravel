@@ -1,4 +1,4 @@
-@extends('extern.layout')
+@extends('layout')
 @section('title', 'Produtos')
 @section('content')
         <div class="container struture">

@@ -1,4 +1,4 @@
-@extends('extern.layout')
+@extends('layout')
 @section('title', 'produt name')
 @section('content')
         <div class=" my-5">

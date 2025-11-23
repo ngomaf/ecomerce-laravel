@@ -136,9 +136,27 @@
             <li><a href="/sobre" class="nav-link px-2">Sobre</a></li>
           </ul>
           <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2">Entrar</button>
-            <button type="button" class="btn btn-primary">Criar</button> &nbsp;
+            @guest
+              <a href="/login" type="button" class="btn btn-outline-primary me-2">Entrar</a>
+              <a href="/criar" type="button" class="btn btn-primary">Criar</a> &nbsp;
+            @endguest
             <a href="/carrinho" class="btn btn-warning"><span style="background: #333" class="badge">{{ \Cart::getContent()->count(); }}</span> <i class="bi bi-cart-fill"></i></a>
+            @auth
+              &nbsp; <div style="display: inline-block;" class="btn btn-outline-primary me-2 nav-item dropdown">
+                <a class="nav-link dropdown-toggle menu-servicos" href="#" id="dropdownMenu" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle"></i>
+                    {{ auth()->user()->firstName }}
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                    <li><a class="dropdown-item" href="/admin/dashboard">Dashboard</a></li>
+                    <li><a class="dropdown-item" href="/admin/perfil">Meu perfil</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a style="color: #c32525" class="dropdown-item" href="/sair"><i class="bi bi-box-arrow-left"></i> Sair</a></li>
+                </ul>
+              </div>
+            @endauth
           </div>
         </header>
     </div>
@@ -181,7 +199,7 @@
             <a href="/sobre" class="nav-link px-2 text-body-secondary">sobre</a>
           </li>
         </ul>
-        <p class="text-center text-body-secondary">&copy; 2025 Company, Inc</p>
+        <p class="text-center text-body-secondary">&copy; {{ date('Y') }} {{ config('app.name', 'Laravel') }}, Inc</p>
       </footer>
     </div>
     <script src="{{ asset('assets/bootstrap5/dist/js/bootstrap.bundle.min.js') }}" class="astro-vvvwv3sm"></script>

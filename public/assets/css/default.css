@@ -189,3 +189,15 @@ main .struture {
     width: 60px;
     padding: 10px;
 }
+
+
+.error {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.error-box {
+    max-width: 550px;
+}
