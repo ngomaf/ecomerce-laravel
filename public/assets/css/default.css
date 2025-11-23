@@ -142,10 +142,12 @@ header {
 
 .card-simple figure img {
     width: 205%;
+    margin-top: -30%;
+    margin-left: -30%;
     transition: .3s;
 }
 
-.card-simple:hover figure img {
+.card-simple li:hover img {
     width: 195%;
 }
 

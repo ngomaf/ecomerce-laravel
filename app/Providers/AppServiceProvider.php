@@ -21,7 +21,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $categories = Category::all();
+        $dateFormatter = function(string $date, string $standard = 'd M Y') 
+        {
+            return \Carbon\Carbon::parse($date)->format($standard);
+        };
 
         view()->share('globCats', $categories);
+        view()->share('dateFormatter', $dateFormatter);
     }
 }

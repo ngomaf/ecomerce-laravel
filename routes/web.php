@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::view('/produto', 'extern.products');
+Route::get('/produto', [ProductController::class, 'index']);
 Route::get('/produto/{slug}', [ProductController::class, 'details']);
 Route::get('/produto/categoria/{slug}', [ProductController::class, 'category']);
 

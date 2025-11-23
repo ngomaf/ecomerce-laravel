@@ -18,7 +18,7 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials, $request->remember)) {
             $request->session()->regenerate();
-            return redirect()->intended('admin/dashboard');
+            return redirect()->intended('admin/dashboard'); // redirect condicional se existir a intencao de um ir a uma url antes do login e redirecionado para la caso contrario, o redirect leva para intended('admin/dashboard')
         }
 
         return redirect()->back()->with('error', 'Utilizador ou palavra-pass errada');
@@ -30,7 +30,7 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect()->intended('/');
     }
 
     public function store(Request $request)

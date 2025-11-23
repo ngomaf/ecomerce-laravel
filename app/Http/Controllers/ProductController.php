@@ -10,7 +10,12 @@ class ProductController extends Controller
 {
     public function index()
     {
-        // 
+        // dd(Product::where('status', true)->take(4)->get());
+
+        return view('extern.products', [
+            'products' => Product::where('status', true)->paginate(9),
+            'productsMoreBuy' => Product::where('status', true)->take(4)->get(),
+        ]);
     }
 
     public function details(string $slug)
