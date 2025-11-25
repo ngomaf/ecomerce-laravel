@@ -22,7 +22,16 @@
                                             <h5 class="card-title">{{ $product->name }}</h5>
                                             <p class="card-text">{{ Illuminate\Support\Str::limit($product->description, 150) }}</p>
                                             <a href="/produto/{{ $product->slug }}" class="btn btn-primary" title="Ver mais">Detalhes</a>
-                                            <a href="#" class="btn btn-primary btn-warning" title="Adicionar ao carrinho"><i class="bi bi-cart-plus-fill"></i></a>
+                                                        
+                                            <form style="display: inline-block;" action="/carrinho" method="post">
+                                                @csrf
+                                                <input type="hidden" name="id" value="{{ $product->id }}">
+                                                <input type="hidden" name="name" value="{{ $product->name }}">
+                                                <input type="hidden" name="price" value="{{ $product->price }}">
+                                                <input type="hidden" name="image" value="{{ $product->image }}">
+                                                <input type="hidden" name="qnt" value="1">
+                                                <button class="btn btn-primary btn-warning" title="Adicionar ao carrinho"><i class="bi bi-cart-plus-fill"></i></button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
