@@ -10,5 +10,10 @@ class Province extends Model
     /** @use HasFactory<\Database\Factories\ProvinceFactory> */
     use HasFactory;
 
-    public bool $timestamps = false;
+    // public bool $timestamps = false;
+
+    public function cities()
+    {
+        return $this->hasMany(City::class);
+    }
 }

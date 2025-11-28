@@ -10,5 +10,15 @@ class City extends Model
     /** @use HasFactory<\Database\Factories\CityFactory> */
     use HasFactory;
 
-    public bool $timestamps = false;
+    // public bool $timestamps = false;
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    public function province()
+    {
+        return $this->belongsTo(Province::class);
+    }
 }

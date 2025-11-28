@@ -162,6 +162,23 @@
     </div>
 
     <main>
+        @if (Request::is('admin/*'))
+          <div class="container top-admin">
+              <div class="row md-3">
+                  <div>
+                      <h2>{{ auth()->user()->firstName }}</h2>
+                      <p>Olá {{ auth()->user()->firstName }} {{ auth()->user()->middleEndLastName }}.</p>
+                  </div>
+
+                  <ul>
+                    <li><a href="/admin/dashboard">Dashboard</a></li>
+                    <li><a href="/admin/produto">Produtos</a></li>
+                    <li><a href="/admin/categoria">Categorias</a></li>
+                    <li><a href="/admin/utilizador">Utilizadores</a></li>
+                  </ul>
+              </div>
+          </div>
+        @endif
 
         @yield('content')
     

@@ -3,9 +3,7 @@
 @section('content')
         <div class="container">
             <div class="row md-3">
-                <h2>@yield('title')</h2>
-                <p>Olá {{ auth()->user()->firstName }} {{ auth()->user()->middleEndLastName }}.</p>
-
+                <p>This is a <strong>dashboard</strong> page.</p>
             </div>
         </div>
 @endsection

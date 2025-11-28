@@ -203,3 +203,45 @@ main .struture {
 .error-box {
     max-width: 550px;
 }
+
+
+
+
+
+.top-admin > div {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 50px;
+}
+
+.top-admin > div div {
+    flex: 1 1 300px;
+}
+
+.top-admin > div ul {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+
+    list-style: none;
+}
+
+
+
+
+.two-blocks {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.two-blocks div:nth-child(2) {
+    columns: 2;
+}

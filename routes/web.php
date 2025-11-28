@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
@@ -29,3 +30,4 @@ Route::view('/sobre', 'extern.about');
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::redirect('/admin', '/admin/dashboard');
+Route::resource('/admin/utilizador', UserController::class)->middleware('auth');
