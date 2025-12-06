@@ -151,7 +151,7 @@
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
                     <li><a class="dropdown-item" href="/admin/dashboard">Dashboard</a></li>
-                    <li><a class="dropdown-item" href="/admin/perfil">Meu perfil</a></li>
+                    <li><a class="dropdown-item" href="/admin/utilizador/{{ auth()->user()->slug }}">Meu perfil</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a style="color: #c32525" class="dropdown-item" href="/sair"><i class="bi bi-box-arrow-left"></i> Sair</a></li>
                 </ul>
@@ -173,7 +173,7 @@
                   <ul>
                     <li><a href="/admin/dashboard">Dashboard</a></li>
                     <li><a href="/admin/produto">Produtos</a></li>
-                    <li><a href="/admin/categoria">Categorias</a></li>
+                    <li><a href="/admin/produto/categoria">Categorias</a></li>
                     <li><a href="/admin/utilizador">Utilizadores</a></li>
                   </ul>
               </div>

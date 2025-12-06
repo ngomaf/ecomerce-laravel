@@ -163,6 +163,14 @@ main .struture {
     padding-top: 50px;
 }
 
+main .title {
+    margin-bottom: 20px;
+}
+
+main .title .right {
+    text-align: right;
+}
+
 
 .category-menu a {
     text-decoration: none;
@@ -244,4 +252,32 @@ main .struture {
 
 .two-blocks div:nth-child(2) {
     columns: 2;
+}
+
+.button-list {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    padding: 0;
+}
+
+.button-list .bi-key,
+.table td .bi-key {
+    display: inline-block;
+    transform: rotate(130deg);
+}
+
+.complement-data {
+    color: #828282;
+}
+
+.title-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
 }

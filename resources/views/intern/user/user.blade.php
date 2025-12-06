@@ -2,10 +2,29 @@
 @section('title', "{$user->firstName} - Utilizador")
 @section('content')
         <div class="container">
-            <h3>{{ $user->firstName }} {{ $user->middleEndLastName }}</h3>
-            <p>{{ $user->email }}</p>
+            <div class="title-actions">
+                <div>
+                    <h3>{{ $user->firstName }} {{ $user->middleEndLastName }}</h3>
+                    <p>{{ $user->email }}</p>
+                </div>
+                <div>
+                    <ul class="button-list">
+                        <li><a class="btn btn-success" href="/admin/utilizador/{{ $user->slug }}/edit"><i class="bi bi-pencil"></i> Editar</a></li>
+                        <li><a class="btn btn-warning" href="/admin/utilizador/{{ $user->slug }}/senha"><i class="bi bi-key"></i> Alterar senha</a></li>
+                        {{-- <li>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i> Eliminar</a>
+                            <form style="display: inline-block;" action="{{ route('utilizador.destroy', $user->slug) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit"><i class="bi bi-trash3"></i> Eliminar</button>
+                            </form>
+                        </li> --}}
+                    </ul>
+                </div>
+            </div>
             
             <br>
+
 
             <div class="two-blocks">
                 <div>
@@ -33,9 +52,9 @@
                 </div>
             </div>
             
-            <div>
-                <p>Data de cadastro: {{ $user->created_at }}</p>
-                <p>Última actualização: {{ $user->updated_at }}</p>
+            <div class="complement-data">
+                <p>Data de cadastro: {{ $user->created_at }} <br>
+                Última actualização: {{ $user->updated_at }}</p>
             </div>
         </div>
 @endsection

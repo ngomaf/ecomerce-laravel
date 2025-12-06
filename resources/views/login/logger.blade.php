@@ -66,6 +66,8 @@
                             class="form-control"
                             id="floatingInput"
                             placeholder="name@example.com"
+                            autofocus
+                            required
                             />
                             <label for="floatingInput">Endereço de e-mail</label>
                         </div>
@@ -76,6 +78,7 @@
                             class="form-control"
                             id="floatingPassword"
                             placeholder="Password"
+                            required
                             />
                             <label for="floatingPassword">Palavra-passe</label>
                         </div>

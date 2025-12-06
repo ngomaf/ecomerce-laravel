@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Criar utilizador')
+@section('title', "{$user->firstName} {$user->middleEndLastName} - editar - Utilizador")
 @section('content')
         <div class="container struture">
             <div class="row">
@@ -27,13 +27,11 @@
                     @endif
 
                     <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">
-                        Criar contar
+                        Actualizar contar
                     </h1>
                     <p class="col-lg-10 fs-4">
-                        Insira os teus dados com cuidado e revize antes de os sub-meter
-                        afim de evitar errors. Lembre que (1) a escolha de utilizadores pode ser 
-                        multipla ou seja mais de um; (2) a palavra-passe deve ter no minimo 6 (seis)
-                        carateres. 
+                        Below is an example form built entirely with Bootstrap’s form
+                        controls. 
                     </p>
                 </div>
                 <div class="col-md-6 themed-grid-col">
@@ -48,7 +46,7 @@
                                                 <input
                                                 type="text"
                                                 name="firstName"
-                                                value="{{ old('firstName') }}"
+                                                value="{{ $user->firstName }}"
                                                 class="form-control"
                                                 id="floatingInput"
                                                 placeholder="Nome"
@@ -62,7 +60,7 @@
                                                 <input
                                                 type="text"
                                                 name="middleEndLastName"
-                                                value="{{ old('middleEndLastName') }}"
+                                                value="{{ $user->middleEndLastName }}"
                                                 class="form-control"
                                                 id="floatingInput"
                                                 placeholder="Nomes do meio e sobrenome"
@@ -76,13 +74,26 @@
                                         <input
                                         type="email"
                                         name="email"
-                                        value="{{ old('email') }}"
+                                        value="{{ $user->email }}"
                                         class="form-control"
                                         id="floatingInput"
                                         placeholder="Endereço de e-mail"
                                         required
                                         />
                                         <label for="floatingInput">Endereço de e-mail*</label>
+                                    </div>
+                                    <div class="mb-3">
+                                        <select
+                                            class="form-select form-select-lg"
+                                            aria-label=".form-select-lg example"
+                                            name="cities[]" multiple
+                                            size="5"
+                                        >
+                                            <option value="" selected disabled>Selecione as cidades</option>
+                                            @foreach ($cities as $city)
+                                                <option value="{{ $city->id }}">{{ $city->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-floating">
                                         <input
@@ -92,7 +103,6 @@
                                         id="floatingPassword"
                                         placeholder="Palavra-passe"
                                         required
-                                        autofocus
                                         />
                                         <label for="floatingPassword">Palavra-passe*</label>
                                     </div>
@@ -100,7 +110,7 @@
                                     <br>
 
                                     <button type="submit" class="btn btn-primary btn-lg">
-                                        Criar conta
+                                        Actualizar
                                     </button>
 
                                 </form>

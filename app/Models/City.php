@@ -14,7 +14,7 @@ class City extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'city_user');
     }
 
     public function province()
